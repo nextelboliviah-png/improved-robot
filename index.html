@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="top">
+    <h1>Mi Panel</h1>
+    <nav class="tabs">
+      <button class="tab active" data-view="panel">Panel</button>
+      <button class="tab" data-view="admin">Admin</button>
+      <button class="tab" data-view="owner">Dueño</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Recursos disponibles</h2>
+      <p class="muted">Lista de elementos (ej. productos, enlaces, reportes, etc.).</p>
+
+      <div class="grid" id="items"></div>
+    </section>
+
+    <section class="grid2">
+      <article class="card">
+        <h3>Login Admin</h3>
+        <p class="muted">Acceso restringido.</p>
+        <button class="btn" id="openAdmin">Entrar</button>
+      </article>
+
+      <article class="card">
+        <h3>Login Dueño</h3>
+        <p class="muted">Acceso restringido.</p>
+        <button class="btn" id="openOwner">Entrar</button>
+      </article>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <dialog id="loginModal" class="modal">
+    <form method="dialog" class="modalBox" id="loginForm">
+      <div class="modalTop">
+        <h3 id="loginTitle">Iniciar sesión</h3>
+        <button class="iconBtn" value="cancel" aria-label="Cerrar">✕</button>
+      </div>
+
+      <label>
+        Usuario
+        <input type="text" id="user" autocomplete="username" required />
+      </label>
+
+      <label>
+        Contraseña
+        <input type="password" id="pass" autocomplete="current-password" required />
+      </label>
+
+      <div class="modalActions">
+        <button class="btn ghost" value="cancel">Cancelar</button>
+        <button class="btn" id="doLogin" value="default">Entrar</button>
+      </div>
+
+      <p class="muted small" id="loginHint"></p>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
